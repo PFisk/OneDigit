@@ -24,7 +24,7 @@ struct ContentView: View {
     @State var hourFormatted: Int = 0;
         
     func setTime(date: Date) -> Void {
-        var hour: Int = calendar.component(.hour, from: date)
+        let hour: Int = calendar.component(.hour, from: date)
         if (formatIs12h) {
             hourFormatted = hour % 12 == 0 ? 12 : hour % 12
         } else {
@@ -33,7 +33,7 @@ struct ContentView: View {
     }
     
     func setProgress(date: Date) -> Void {
-        var minutes: Int = calendar.component(.minute, from: date)
+        let minutes: Int = calendar.component(.minute, from: date)
         clockProgress = Float(minutes)/60;
     }
     
